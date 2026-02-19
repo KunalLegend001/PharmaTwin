@@ -1,0 +1,11 @@
+## 👨‍💻 Coder 1 — Backend Engineer (Critical Path)
+
+> Builds the core engine
+
+Will work on:
+
+* VCF parsing
+* Variant extraction
+* Phenotype detection
+* JSON output generator
+* Rule engine

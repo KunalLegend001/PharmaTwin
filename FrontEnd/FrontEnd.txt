@@ -1,0 +1,11 @@
+## 👨‍💻 Coder 2 — Frontend Engineer
+
+> Builds the product experience
+
+Will work on:
+
+* Upload page
+* Result dashboard
+* Risk visualization
+* Graph simulation
+* Download JSON
