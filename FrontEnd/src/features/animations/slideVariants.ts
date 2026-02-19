@@ -1,4 +1,4 @@
-import { Variants } from "framer-motion";
+import type { Variants } from "framer-motion";
 
 export const slideInLeft: Variants = {
   hidden: { opacity: 0, x: -60 },

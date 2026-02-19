@@ -1,4 +1,3 @@
-import type { UserType } from "@/constants/enums";
 
 export interface User1 {
   email: string;
@@ -10,5 +9,4 @@ export interface User2 {
   email: string;
   password: string;
   phone: string;
-  type?: UserType;
 }
