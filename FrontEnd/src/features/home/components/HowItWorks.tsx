@@ -26,7 +26,7 @@ const HowItWorks = () => {
     <section className="py-12 sm:py-20 px-6 bg-[#E8F7F5] relative overflow-hidden">
       {/* Background Lab Image */}
       <div
-        className="absolute inset-0 opacity-[0.06] bg-cover bg-center"
+        className="absolute inset-0 opacity-[0.1] bg-cover bg-center"
         style={{
           backgroundImage:
             "url('https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=1200&q=80')",

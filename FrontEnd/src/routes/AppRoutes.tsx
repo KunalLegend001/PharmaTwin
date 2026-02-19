@@ -17,21 +17,10 @@ const AppRoutes = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
 
-      {/* Protected standalone */}
-      {/* <Route
-        path="/add"
-        element={
-          <ProtectedRoute>
-            <AdditionalInfo />
-          </ProtectedRoute>
-        }
-      /> */}
-
       {/* Layout-wrapped routes */}
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
-      <Route path="/analysis" element={<Analysis />} />
-
+        <Route path="/analysis" element={<Analysis />} />
       </Route>
 
       {/* 404 */}

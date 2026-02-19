@@ -22,7 +22,7 @@ const ProblemSection = () => {
     <section className="py-12 sm:py-20 px-6 bg-white relative overflow-hidden">
       {/* Background Clinical Image */}
       <div
-        className="absolute inset-0 opacity-[0.04] bg-cover bg-center"
+        className="absolute inset-0 opacity-[0.08] bg-cover bg-center"
         style={{
           backgroundImage:
             "url('https://images.unsplash.com/photo-1579154204601-01588f351e67?w=1200&q=80')",

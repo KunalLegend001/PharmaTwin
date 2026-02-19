@@ -73,6 +73,16 @@ const SupportedDrugs = () => {
 
   return (
     <section className="py-20 px-6 bg-white relative overflow-hidden">
+      {/* Background Pharmacy/Pills Image */}
+      <div
+        className="absolute inset-0 opacity-[0.08] bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=1200&q=80')",
+        }}
+        aria-hidden="true"
+      />
+      
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl lg:text-4xl font-bold text-[#0E3B3B] mb-4">

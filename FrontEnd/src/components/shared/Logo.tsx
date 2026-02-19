@@ -1,4 +1,4 @@
-import logo from "@/assets/logo2.png";
+import logo from "@/assets/logo.png";
 import { appName } from "@/constants/constants";
 import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
@@ -15,7 +15,7 @@ const Logo = ({ className }: LogoProps) => (
         className,
       )}
     >
-      <img src={logo} />
+      <img src={logo} alt="PharmaTwin Logo" />
     </div>
     <span className="font-bold text-lg">{appName}</span>
   </Link>

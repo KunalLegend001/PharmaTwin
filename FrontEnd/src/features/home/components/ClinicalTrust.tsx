@@ -7,8 +7,18 @@ const ClinicalTrust = () => {
   ];
 
   return (
-    <section className="py-20 px-6 bg-[#E8F7F5]">
-      <div className="max-w-5xl mx-auto">
+    <section className="py-20 px-6 bg-[#E8F7F5] relative overflow-hidden">
+      {/* Background Clinical Standards Image */}
+      <div
+        className="absolute inset-0 opacity-[0.08] bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1581594549595-35f6edc7b762?w=1200&q=80')",
+        }}
+        aria-hidden="true"
+      />
+      
+      <div className="max-w-5xl mx-auto relative z-10">
         <div className="bg-white rounded-2xl shadow-lg p-10 border border-gray-100">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold text-[#0E3B3B] mb-4">
