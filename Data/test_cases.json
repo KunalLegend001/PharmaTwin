@@ -1,0 +1,62 @@
+[
+  {
+    "case_id": "TC01",
+    "description": "Clopidogrel ineffective due to CYP2C19 loss",
+    "variants": ["rs4244285"],
+    "drug": "Clopidogrel",
+    "expected_gene": "CYP2C19",
+    "expected_phenotype": "Poor Metabolizer",
+    "expected_risk": "Ineffective",
+    "expected_action": "Use alternative antiplatelet"
+  },
+  {
+    "case_id": "TC02",
+    "description": "Warfarin bleeding risk due to CYP2C9 reduced metabolism",
+    "variants": ["rs1799853"],
+    "drug": "Warfarin",
+    "expected_gene": "CYP2C9",
+    "expected_phenotype": "Poor Metabolizer",
+    "expected_risk": "Toxic",
+    "expected_action": "Reduce dose"
+  },
+  {
+    "case_id": "TC03",
+    "description": "Codeine toxicity due to CYP2D6 ultra metabolizer",
+    "variants": ["rs3892097"],
+    "drug": "Codeine",
+    "expected_gene": "CYP2D6",
+    "expected_phenotype": "Ultra Metabolizer",
+    "expected_risk": "Toxic",
+    "expected_action": "Avoid codeine"
+  },
+  {
+    "case_id": "TC04",
+    "description": "Simvastatin myopathy risk SLCO1B1 poor transport",
+    "variants": ["rs4149056"],
+    "drug": "Simvastatin",
+    "expected_gene": "SLCO1B1",
+    "expected_phenotype": "Poor Function",
+    "expected_risk": "Toxic",
+    "expected_action": "Lower dose or alternative statin"
+  },
+  {
+    "case_id": "TC05",
+    "description": "Azathioprine toxicity TPMT deficiency",
+    "variants": ["rs1142345"],
+    "drug": "Azathioprine",
+    "expected_gene": "TPMT",
+    "expected_phenotype": "Poor Metabolizer",
+    "expected_risk": "Toxic",
+    "expected_action": "Use alternative therapy"
+  },
+  {
+    "case_id": "TC06",
+    "description": "Fluorouracil toxicity DPYD deficiency",
+    "variants": ["rs3918290"],
+    "drug": "Fluorouracil",
+    "expected_gene": "DPYD",
+    "expected_phenotype": "Poor Metabolizer",
+    "expected_risk": "Toxic",
+    "expected_action": "Avoid fluorouracil"
+  }
+]
