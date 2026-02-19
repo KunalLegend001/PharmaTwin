@@ -1,0 +1,13 @@
+{
+    "title": "Analysis",
+    "vccError":"VCF file is required",
+    "noDrug":"Please enter at least one drug name",
+    "vcfSupport":"Only .vcf files are supported.",
+    "onlyVCF":"Only .vcf files are supported.",
+    "somethingWentWrong":"Something went wrong while analyzing.",
+    "analysis":"Pharmacogenomic Risk Analysis",
+    "name":"Drug Name",
+    "multipe":"Enter one or multiple drugs separated by commas.",
+    "analyzing":"Analyzing...",
+    "analyze":"Analyze"
+}

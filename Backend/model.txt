@@ -1,0 +1,75 @@
+model User {
+  id        String    @id @default(uuid())
+  name      String?
+  email     String    @unique
+  password  String
+  phone     String?
+  avatar    String?
+  type      UserType?
+  createdAt DateTime  @default(now())
+
+  municipalCorporation MunicipalCorporation?
+  waterUser            WaterUser?
+}
+
+enum UserType {
+  MUNICIPAL
+  WATER_USER
+}
+
+model MunicipalCorporation {
+  id         String   @id
+  totalUsage Float    @default(0)
+  createdAt  DateTime @default(now())
+
+  users   WaterUser[]
+  sensors Sensor[]
+
+  user User @relation(fields: [id], references: [id], onDelete: Cascade)
+}
+
+model WaterUser {
+  id          String   @id
+  address     String?
+  municipalId String
+  totalUsage  Float    @default(0)
+  unpaidUsage Float    @default(0)
+  createdAt   DateTime @default(now())
+
+  sensors  Sensor[]
+  payments Payment[]
+
+  user                 User                 @relation(fields: [id], references: [id], onDelete: Cascade)
+  municipalCorporation MunicipalCorporation @relation(fields: [municipalId], references: [id])
+}
+
+model Sensor {
+  id          String   @id @default(uuid())
+  pressure    Float?
+  tds         Float?
+  usage       Float?
+  status      String?
+  waterUserId String?
+  municipalId String?
+  createdAt   DateTime @default(now())
+
+  waterUser WaterUser? @relation(fields: [waterUserId], references: [id])
+
+  municipalCorporation MunicipalCorporation? @relation(fields: [municipalId], references: [id])
+}
+
+model Payment {
+  id          String        @id @default(uuid())
+  amount      Float
+  status      PaymentStatus
+  waterUserId String
+  createdAt   DateTime      @default(now())
+
+  waterUser WaterUser @relation(fields: [waterUserId], references: [id])
+}
+
+enum PaymentStatus {
+  PENDING
+  COMPLETED
+  FAILED
+}
