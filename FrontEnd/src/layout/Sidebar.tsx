@@ -21,11 +21,13 @@ import {
   Home,
   LogoutCurve,
   User,
-  Bill,
-  Radar,
-  Message,
-  Activity,
 } from "iconsax-reactjs";
+import { 
+  ScanText, 
+  Pill, 
+  MessageSquareCheck, 
+  History 
+} from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -82,10 +84,10 @@ const SidebarContent = () => {
 
   const navLinks = [
     { title: t("home"), icon: Home, to: "/" },
-    { title: t("analysis"), icon: Bill, to: "/analysis" },
-    { title: t("nearbyPharma"), icon: Radar, to: "/pharmacies" },
-    { title: t("support"), icon: Message, to: "/support" },
-    { title: t("history"), icon: Activity, to: "/history" },
+    { title: t("analysis"), icon: ScanText, to: "/analysis" },
+    { title: t("nearbyPharma"), icon: Pill, to: "/pharmacies" },
+    { title: t("support"), icon: MessageSquareCheck, to: "/support" },
+    { title: t("history"), icon: History, to: "/history" },
   ];
 
   const dispatch = useDispatch();

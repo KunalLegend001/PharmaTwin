@@ -1,7 +1,7 @@
 import { backendUrl } from "@/constants/constants";
 import axios from "axios";
 
-const pharmaUrl: string = backendUrl + "/pharma";
+const pharmaUrl: string = backendUrl + "/anyalsis";
 
 export const analyzeVCF = async (file: File, drugs: string) => {
   const formData = new FormData();

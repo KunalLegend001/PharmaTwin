@@ -38,18 +38,7 @@ export const signup = async (
         email: data.email,
         password: hashedPassword,
         phone: data.phone,
-
-        waterUser: {
-          create: {
-                municipalCorporation: {
-                  connect: { id: "144b0aa8-87c5-49b3-8f80-3ec5977b5813" },
-                },
-          },
-        },
-      },
-      include: {
-        waterUser: true,
-      },
+      }
     });
 
     const token = jwt.sign(

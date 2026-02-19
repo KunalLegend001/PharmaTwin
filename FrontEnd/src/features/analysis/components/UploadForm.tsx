@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { analyzeVCF } from "@/api/pharma";
+import { analyzeVCF } from "@/api/analysis";
 
 import { useTranslation } from "react-i18next";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";

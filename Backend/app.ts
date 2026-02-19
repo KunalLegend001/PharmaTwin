@@ -45,8 +45,8 @@ app.use(
       `${VERSION}/auth/signup`,
       `${VERSION}/auth/login`,
       `${VERSION}/auth/status`,
-      `${VERSION}/auth/anyalsis/analyze`,
-    ],
+      `${VERSION}/anyalsis/analyze`,
+    ],  
   }),
 );
 

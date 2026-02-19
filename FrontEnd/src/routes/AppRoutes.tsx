@@ -9,6 +9,7 @@ import Signup from "@/features/auth/pages/Signup";
 import Home from "@/features/home/pages/Home";
 import NotFound from "@/features/other/NotFound";
 import Analysis from "@/features/analysis/Analysis";
+import { LiveLocationMap } from "@/features/nearby/Nearby";
 
 const AppRoutes = () => {
   return (
@@ -31,6 +32,7 @@ const AppRoutes = () => {
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
       <Route path="/analysis" element={<Analysis />} />
+      <Route path="/nearby" element={<LiveLocationMap />} />
 
       </Route>
 
