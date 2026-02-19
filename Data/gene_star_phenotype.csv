@@ -1,0 +1,7 @@
+Gene,RSID,StarAllele,Phenotype
+CYP2C19,rs4244285,*2,Poor
+CYP2C9,rs1057910,*3,Poor
+CYP2D6,rs3892097,*4,Poor
+SLCO1B1,rs4149056,*5,LowFunction
+TPMT,rs1142345,*3A,Poor
+DPYD,rs3918290,*2A,Poor

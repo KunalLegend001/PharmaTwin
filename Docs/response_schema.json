@@ -1,0 +1,48 @@
+{
+  "patient_id": "string",
+
+  "variants": [
+    {
+      "rsid": "string",
+      "chromosome": "string",
+      "position": "number",
+      "genotype": "string"
+    }
+  ],
+
+  "gene_phenotypes": [
+    {
+      "gene": "string",
+      "diplotype": "string",
+      "phenotype": "string",
+      "evidence": ["rsid1", "rsid2"]
+    }
+  ],
+
+  "drug_reports": [
+    {
+      "drug": "string",
+      "gene": "string",
+      "phenotype": "string",
+
+      "risk_level": "Low | Moderate | High | Contraindicated",
+
+      "recommendation": "string",
+      "alternative_drug": "string",
+
+      "mechanism": "string",
+
+      "ai_explanation": {
+        "pharmacological_reason": "string",
+        "clinical_consequence": "string",
+        "why_recommendation_correct": "string"
+      }
+    }
+  ],
+
+  "meta": {
+    "analysis_time": "ISO-8601 timestamp",
+    "guideline_source": "CPIC/DPWG",
+    "system_version": "1.0"
+  }
+}
