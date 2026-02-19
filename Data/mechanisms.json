@@ -1,0 +1,20 @@
+{
+  "CODEINE_CYP2D6": {
+    "summary": "CYP2D6 converts codeine into morphine. Low activity makes drug ineffective. High activity causes toxicity."
+  },
+  "CLOPIDOGREL_CYP2C19": {
+    "summary": "CYP2C19 activates clopidogrel. Reduced activity prevents drug from working."
+  },
+  "WARFARIN_CYP2C9": {
+    "summary": "CYP2C9 breaks down warfarin. Slow metabolism increases bleeding risk."
+  },
+  "SIMVASTATIN_SLCO1B1": {
+    "summary": "SLCO1B1 moves simvastatin into liver. Reduced function causes drug buildup."
+  },
+  "AZATHIOPRINE_TPMT": {
+    "summary": "TPMT detoxifies azathioprine. Low activity causes toxicity."
+  },
+  "FLUOROURACIL_DPYD": {
+    "summary": "DPYD breaks down fluorouracil. Deficiency causes severe toxicity."
+  }
+}

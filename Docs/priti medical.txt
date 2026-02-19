@@ -1,0 +1,120 @@
+✅ PHASE 1 — /data/gene_star_phenotype.csv
+Columns
+
+Gene,RSID,StarAllele,Phenotype
+
+Minimal clinically valid dataset
+Gene,RSID,StarAllele,Phenotype
+CYP2D6,rs3892097,*4,Poor
+CYP2D6,rs1065852,*10,Intermediate
+CYP2D6,rs35742686,*3,Poor
+CYP2C19,rs4244285,*2,Poor
+CYP2C19,rs4986893,*3,Poor
+CYP2C19,rs12248560,*17,Rapid
+CYP2C9,rs1799853,*2,Intermediate
+CYP2C9,rs1057910,*3,Poor
+TPMT,rs1800462,*2,Poor
+TPMT,rs1142345,*3A,Poor
+DPYD,rs3918290,*2A,Poor
+DPYD,rs67376798,*13,Poor
+SLCO1B1,rs4149056,*5,LowFunction
+SLCO1B1,rs2306283,*1B,Normal
+
+Clinical meaning
+
+Poor → reduced or absent enzyme activity
+
+Intermediate → reduced metabolism
+
+Rapid → increased metabolism
+
+LowFunction (SLCO1B1) → reduced drug transport
+
+This file enables:
+VCF → star allele → phenotype.
+
+✅ PHASE 2 — /data/drug_rules.csv
+Columns
+
+Drug,Gene,Phenotype,Risk,Recommendation,Alternative
+
+Core decision rules (aligned with CPIC logic)
+CODEINE,CYP2D6,Poor,Ineffective,Avoid,Morphine
+CODEINE,CYP2D6,Ultra,Toxic,Avoid,Morphine
+CLOPIDOGREL,CYP2C19,Poor,Ineffective,Avoid,Prasugrel
+CLOPIDOGREL,CYP2C19,Intermediate,Adjust Dosage,Consider alternative,Prasugrel
+WARFARIN,CYP2C9,Poor,Toxic,Reduce Dose,Apixaban
+WARFARIN,CYP2C9,Intermediate,Adjust Dosage,Lower starting dose,Apixaban
+SIMVASTATIN,SLCO1B1,LowFunction,Toxic,Use lower dose,Pravastatin
+AZATHIOPRINE,TPMT,Poor,Toxic,Avoid,Mycophenolate
+FLUOROURACIL,DPYD,Poor,Toxic,Avoid,Capecitabine alternative dosing
+
+Risk interpretation standard
+
+Safe → normal metabolism
+Adjust Dosage → altered exposure
+Toxic → overdose risk
+Ineffective → drug won’t work
+
+This file powers the risk classification engine.
+
+✅ PHASE 3 — /data/mechanisms.json
+
+Short, mechanistic, judge-friendly explanations.
+
+{
+  "CODEINE_CYP2D6": "CYP2D6 converts codeine into active morphine. Poor metabolizers cannot activate the drug; ultra-rapid metabolizers produce excessive morphine causing toxicity.",
+
+  "CLOPIDOGREL_CYP2C19": "CYP2C19 activates clopidogrel. Loss-of-function variants reduce formation of active metabolite leading to reduced antiplatelet effect.",
+
+  "WARFARIN_CYP2C9": "CYP2C9 metabolizes warfarin. Reduced enzyme activity slows drug clearance and increases bleeding risk.",
+
+  "SIMVASTATIN_SLCO1B1": "SLCO1B1 transports simvastatin into hepatocytes. Reduced transport increases systemic drug concentration and muscle toxicity risk.",
+
+  "AZATHIOPRINE_TPMT": "TPMT inactivates thiopurines. Deficiency causes accumulation of toxic metabolites leading to myelosuppression.",
+
+  "FLUOROURACIL_DPYD": "DPYD metabolizes fluorouracil. Deficiency causes severe drug accumulation and life-threatening toxicity."
+}
+
+
+This feeds the LLM with biological grounding.
+
+✅ PHASE 4 — VALIDATION CHECKLIST
+
+When backend gives outputs, verify:
+
+Genetic interpretation
+
+✔ Star allele matches RSID
+✔ Diplotype logically inferred
+✔ Phenotype matches mapping
+
+Clinical decision
+
+✔ Drug–gene pairing correct
+✔ Risk label matches phenotype
+✔ Recommendation consistent with guideline
+
+Common failure cases to watch
+
+Wrong gene selected as primary
+
+Normal phenotype labeled toxic
+
+Missing alternative drug
+
+Unknown phenotype misclassified
+
+Report mismatches as:
+
+Patient ID:
+Drug:
+Expected:
+Observed:
+Reason:
+
+🧑‍⚕️ FINAL PHASE — 1-Minute Judge Explanation
+
+Here’s a clean, professional script you can deliver:
+
+Pharmacogenomics explains why patients respond differently to the same medication. Many drugs are metabolized by enzymes encoded by genes such as CYP2D6 or CYP2C19. Genetic variants can reduce or increase enzyme activity, leading to treatment failure or life-threatening toxicity. Our system analyzes patient genomic variants from standard VCF files, identifies clinically relevant pharmacogenes, predicts metabolic phenotype, and applies evidence-based prescribing guidelines. This allows clinicians to adjust therapy before harm occurs, transforming medication selection from trial-and-error into precision medicine.

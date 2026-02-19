@@ -1,0 +1,9 @@
+Load JSON
+fetch("/data/mechanisms.json")
+  .then(res => res.json())
+  .then(data => console.log(data));
+
+Load CSV (basic example)
+fetch("/data/drug_rules.csv")
+  .then(res => res.text())
+  .then(text => console.log(text));

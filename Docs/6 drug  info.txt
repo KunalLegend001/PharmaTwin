@@ -1,0 +1,126 @@
+🧬 What your system is doing (big picture)
+
+Your app reads a patient’s DNA file (VCF) and looks for specific genetic differences in 6 important genes that control how the body handles certain medicines.
+
+These genes affect:
+✅ how fast a drug is activated
+✅ how quickly it is removed
+✅ how strongly it acts
+✅ whether side effects happen
+
+If a gene works differently → the drug response changes.
+
+🧪 The 6 Critical Pharmacogenes (Easy Guide)
+1️⃣ CYP2D6 — Drug activation speed controller
+
+What it does: Converts some medicines into their active form.
+
+Why it matters
+
+Too slow → drug doesn’t work
+
+Too fast → overdose risk
+
+Important drug: Codeine
+
+Example
+Some people cannot convert codeine into morphine → no pain relief.
+
+2️⃣ CYP2C19 — Drug activation enzyme
+
+What it does: Activates certain heart and stomach medications.
+
+Why it matters
+
+Low activity → drug ineffective
+
+Normal activity → drug works
+
+Important drug: Clopidogrel
+
+Example
+If CYP2C19 is weak, clopidogrel cannot prevent blood clots properly.
+
+3️⃣ CYP2C9 — Drug breakdown controller
+
+What it does: Helps remove drugs from the body.
+
+Why it matters
+
+Slow metabolism → drug builds up → toxicity
+
+Important drug: Warfarin
+
+Example
+Slow CYP2C9 → higher bleeding risk at normal dose.
+
+4️⃣ SLCO1B1 — Drug transport protein
+
+What it does: Moves drugs from blood into liver.
+
+Why it matters
+
+Poor transport → drug stays in bloodstream
+
+High drug levels → side effects
+
+Important drug: Simvastatin
+
+Example
+Low SLCO1B1 function → muscle damage risk.
+
+5️⃣ TPMT — Drug detox enzyme
+
+What it does: Deactivates certain chemotherapy and immune drugs.
+
+Why it matters
+
+Low activity → toxic drug buildup
+
+Important drug: Azathioprine
+
+Example
+Low TPMT → severe bone marrow toxicity.
+
+6️⃣ DPYD — Drug clearance enzyme
+
+What it does: Breaks down chemotherapy drug fluorouracil.
+
+Why it matters
+
+Deficiency → life-threatening toxicity
+
+Important drug: Fluorouracil
+
+Example
+DPYD deficiency → drug cannot be cleared → severe reaction.
+
+🔬 What “identifying variants” means
+
+Each gene has many possible versions.
+Your system checks if the patient has:
+
+✔ normal function
+✔ reduced function
+✔ no function
+✔ increased function
+
+This determines the patient’s drug metabolism type.
+
+🧠 How this helps doctors
+
+Instead of guessing, doctors can know:
+
+Will the drug work?
+
+Should dose be reduced?
+
+Is another drug safer?
+
+So treatment becomes personalized medicine.
+
+🎯 One-line summary for your project
+
+Your system scans genetic variants in six key drug-response genes to predict whether a medication will be safe, ineffective, or toxic for an individual patient.
+
+If you want, I can next give you:

@@ -1,0 +1,7 @@
+Drug,Gene,Phenotype,Risk,Recommendation,Alternative
+CODEINE,CYP2D6,Poor,Ineffective,Avoid,Morphine
+CLOPIDOGREL,CYP2C19,Poor,Ineffective,Avoid,Prasugrel
+WARFARIN,CYP2C9,Poor,Toxic,Reduce Dose,Apixaban
+SIMVASTATIN,SLCO1B1,LowFunction,Toxic,Lower dose,Pravastatin
+AZATHIOPRINE,TPMT,Poor,Toxic,Avoid,Mycophenolate
+FLUOROURACIL,DPYD,Poor,Toxic,Avoid,Alternative therapy

@@ -1,0 +1,15 @@
+Create folders like this:
+
+project/
+│
+├── public/
+│   └── data/
+│       ├── gene_star_phenotype.csv
+│       ├── drug_rules.csv
+│       └── mechanisms.json
+│
+├── index.html
+├── app.js
+
+
+👉 public/data is where all medical knowledge files live.
