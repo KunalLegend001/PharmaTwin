@@ -1,0 +1,26 @@
+{
+  "patient_id": "string",
+  "analyzed_drugs": [
+    {
+      "drug": "string",
+      "gene": "string",
+      "phenotype": "string",
+      "risk_assessment": {
+        "risk_label": "Safe | Adjust Dose | Toxic | Ineffective",
+        "confidence_score": 0.0
+      },
+      "recommendation": {
+        "action": "Use | Reduce Dose | Increase Dose | Avoid | Alternative",
+        "dose_adjustment": "string",
+        "alternative_drug": "string"
+      },
+      "clinical_explanation": "string",
+      "biological_mechanism": "string",
+      "citations": ["string"]
+    }
+  ],
+  "quality_metrics": {
+    "vcf_parsing_success": true,
+    "genes_detected": []
+  }
+}

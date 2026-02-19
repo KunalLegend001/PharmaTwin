@@ -1,0 +1,6 @@
+Reject explanation if:
+- mentions mutation not in input
+- gives lifestyle advice
+- too long (>5 sentences)
+- does not mention gene
+- does not mention drug mechanism

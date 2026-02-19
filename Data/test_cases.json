@@ -1,0 +1,37 @@
+[
+  {
+    "patient_id": "PAT_01",
+    "gene": "CYP2C19",
+    "phenotype": "Poor Metabolizer",
+    "drug": "Clopidogrel",
+    "expected_risk": "Ineffective"
+  },
+  {
+    "patient_id": "PAT_02",
+    "gene": "CYP2D6",
+    "phenotype": "Ultra Metabolizer",
+    "drug": "Codeine",
+    "expected_risk": "Toxic"
+  },
+  {
+    "patient_id": "PAT_03",
+    "gene": "TPMT",
+    "phenotype": "Poor Metabolizer",
+    "drug": "Azathioprine",
+    "expected_risk": "Toxic"
+  },
+  {
+    "patient_id": "PAT_04",
+    "gene": "CYP2C9",
+    "phenotype": "Poor Metabolizer",
+    "drug": "Warfarin",
+    "expected_risk": "Adjust Dose"
+  },
+  {
+    "patient_id": "PAT_05",
+    "gene": "SLCO1B1",
+    "phenotype": "Reduced Function",
+    "drug": "Simvastatin",
+    "expected_risk": "Toxic"
+  }
+]
