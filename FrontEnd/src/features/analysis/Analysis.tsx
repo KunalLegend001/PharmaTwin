@@ -1,25 +1,32 @@
-import  { useState } from "react";
+import React, { useEffect, useState } from "react";
 import UploadForm from "./components/UploadForm";
 import ResultDisplay from "./components/ResultDisplay";
-import { useTranslation } from "react-i18next";
-import { Separator } from "@/components/ui/separator";
-import Header from "@/components/shared/Header";
 
-
-function Analysis() {
+const Analysis: React.FC = () => {
   const [result, setResult] = useState<any>(null);
-  const { t } = useTranslation("analysis");
+
+  useEffect(() => {
+    const stored = localStorage.getItem("selected_result");
+    if (stored) {
+      try {
+        setResult(JSON.parse(stored));
+      } catch (e) {
+        console.error("Invalid stored result");
+      }
+    }
+  }, []);
+
+  const handleNewResult = (data: any) => {
+    setResult(data);
+    localStorage.removeItem("selected_result"); // Clear old selected history
+  };
 
   return (
-    <div>
-      <Header title={t("title")} />
-      <Separator />
-      <UploadForm onResult={setResult} />
+    <>
+      <UploadForm onResult={handleNewResult} />
       <ResultDisplay result={result} />
-    </div>
+    </>
   );
-}
+};
 
 export default Analysis;
-
-

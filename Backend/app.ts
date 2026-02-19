@@ -6,6 +6,7 @@ import cookieParser from "cookie-parser";
 import { router as authRouter } from "./routes/auth.route.js";
 import { router as userRouter } from "./routes/user.route.js";
 import { router as anyalsisRouter } from "./routes/anyalsis.route.js";
+import { router as geminiRouter } from "./routes/gemini.route.js";
 import { expressjwt } from "express-jwt";
 import { globalCatch } from "./middlewares/globalCatch.middleware.js";
 import cors from "cors";
@@ -54,6 +55,7 @@ app.use(
 app.use(`${VERSION}/auth`, authRouter);
 app.use(`${VERSION}/user`, userRouter);
 app.use(`${VERSION}/anyalsis`, anyalsisRouter);
+app.use(`${VERSION}/gemini`, geminiRouter);
 
 // Global catch
 app.use(globalCatch);

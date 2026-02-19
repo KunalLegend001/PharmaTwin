@@ -9,7 +9,8 @@ import Signup from "@/features/auth/pages/Signup";
 import Home from "@/features/home/pages/Home";
 import NotFound from "@/features/other/NotFound";
 import Analysis from "@/features/analysis/Analysis";
-import { LiveLocationMap } from "@/features/nearby/Nearby";
+import HistoryPage from "@/features/analysis/HistoryPage";
+import { PharmaChatbotForm } from "@/features/chat/Chatbot";
 
 const AppRoutes = () => {
   return (
@@ -21,8 +22,9 @@ const AppRoutes = () => {
       {/* Layout-wrapped routes */}
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
-      <Route path="/analysis" element={<Analysis />} />
-      <Route path="/nearby" element={<LiveLocationMap />} />
+        <Route path="/analysis" element={<Analysis />} />
+        <Route path="/history" element={<HistoryPage />} />
+        <Route path="/support" element={<PharmaChatbotForm />} />
 
 
       </Route>

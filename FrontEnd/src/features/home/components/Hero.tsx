@@ -46,11 +46,11 @@ const Hero = () => {
                 Upload Genome
               </button>
               <button
-                onClick={() => navigate("/demo")}
+                onClick={() => navigate("/support")}
                 aria-label="View demonstration"
                 className="px-8 py-3 border-2 border-[#1FAF9A] bg-white/80 backdrop-blur-sm text-[#1FAF9A] font-semibold rounded-lg hover:bg-[#E8F7F5] transition-all hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#1FAF9A] focus:ring-offset-2"
               >
-                View Demo
+                Live Chart
               </button>
             </div>
           </div>

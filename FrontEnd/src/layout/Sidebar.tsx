@@ -24,7 +24,6 @@ import {
 } from "iconsax-reactjs";
 import { 
   ScanText, 
-  Pill, 
   MessageSquareCheck, 
   History 
 } from "lucide-react";
@@ -85,7 +84,6 @@ const SidebarContent = () => {
   const navLinks = [
     { title: t("home"), icon: Home, to: "/" },
     { title: t("analysis"), icon: ScanText, to: "/analysis" },
-    { title: t("nearbyPharma"), icon: Pill, to: "/pharmacies" },
     { title: t("support"), icon: MessageSquareCheck, to: "/support" },
     { title: t("history"), icon: History, to: "/history" },
   ];

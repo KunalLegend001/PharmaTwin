@@ -14,7 +14,7 @@ const HomeFooter = () => {
           {/* Left */}
           <div>
             <div className="flex items-center gap-2 mb-3">
-              <Logo />
+              <Logo className="ml-5"/>
               <span className="text-xl font-bold">PharmaTwin</span>
             </div>
             <p className="text-gray-300 text-sm">
@@ -30,7 +30,6 @@ const HomeFooter = () => {
                 href={link.href}
                 className="text-gray-300 hover:text-[#1FAF9A] transition-colors text-sm font-medium"
               >
-                {link.name}
               </a>
             ))}
           </div>
