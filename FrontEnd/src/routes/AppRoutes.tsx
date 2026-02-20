@@ -26,7 +26,7 @@ const AppRoutes = () => {
         <Route path="/history" element={<HistoryPage />} />
         <Route path="/support" element={<PharmaChatbotForm />} />
 
-
+    
       </Route>
 
       {/* 404 */}
