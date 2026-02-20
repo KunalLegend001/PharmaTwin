@@ -47,6 +47,7 @@ app.use(
       `${VERSION}/auth/login`,
       `${VERSION}/auth/status`,
       `${VERSION}/anyalsis/analyze`,
+      `${VERSION}/gemini/Pharmachatbot`,
     ],  
   }),
 );
