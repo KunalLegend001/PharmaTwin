@@ -57,17 +57,25 @@ router.post(
       const aiPrompt = `
 You are a clinical pharmacogenomics AI.
 Patient has the following variants: ${detectedVariants
-        .map(
-          (v) =>
-            `${v.rsid} (${v.gene}): genotype=${v.genotype}, star=${v.star}`
-        )
-        .join("; ")}.
+  .map(
+    (v) =>
+      `${v.rsid} (${v.gene}): genotype=${v.genotype}, star=${v.star}`
+  )
+  .join("; ")}.
 Drug of interest: ${drugs}.
+
 Generate a valid JSON object ONLY, containing:
 1. risk_assessment (risk_label, confidence_score, severity)
 2. pharmacogenomic_profile (primary_gene, diplotype, phenotype, detected_variants)
 3. clinical_recommendation (recommendation, cpic_guideline_reference)
 4. llm_generated_explanation (summary, mechanism)
+
+IMPORTANT:
+- risk_label must be **one of the following exactly**:
+  "Safe", "Low Risk", "Adjust Dosage", "High Risk", "Toxic", "Ineffective", "Decreased Efficacy"
+- confidence_score: "High", "Medium", or "Low"
+- severity: "Low", "Moderate", "High"
+
 Do NOT include any explanation or text outside the JSON.
 Make sure the JSON is strictly parsable.
 `;

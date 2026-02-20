@@ -43,7 +43,7 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
             <div className="flex items-center justify-between p-6 border-b border-gray-200">
               <div className="flex items-center gap-3">
                 <Logo />
-                <span className="text-2xl font-bold text-[#0F2D52]">
+                <span className="text-2xl font-bold">
                   PharmaTwin
                 </span>
               </div>

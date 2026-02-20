@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import ReactMarkdown from "react-markdown";
 
 interface ChatMessage {
   id: number;
-  type: string;
+  type: "client" | "bot";
   message: string;
 }
 
@@ -13,6 +13,7 @@ interface BotChatsProps {
 
 const BotChats: React.FC<BotChatsProps> = ({ clientChat }) => {
   const [displayedMessages, setDisplayedMessages] = useState<ChatMessage[]>([]);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (clientChat.length === 0) return;
@@ -26,30 +27,45 @@ const BotChats: React.FC<BotChatsProps> = ({ clientChat }) => {
     if (lastMessage.type === "client") {
       setDisplayedMessages((prev) => [...prev, lastMessage]);
     } else {
-      let index = 0;
       const typingMessage: ChatMessage = { ...lastMessage, message: "" };
+      let index = 0;
 
       setDisplayedMessages((prev) => [...prev, typingMessage]);
 
-      const typingInterval = setInterval(() => {
+      const typeNextChar = () => {
         index++;
-        setDisplayedMessages((prev) =>
-          prev.map((msg) =>
+        setDisplayedMessages((prevInner) =>
+          prevInner.map((msg) =>
             msg.id === lastMessage.id
               ? { ...msg, message: lastMessage.message.slice(0, index) }
               : msg
           )
         );
 
-        if (index >= lastMessage.message.length) {
-          clearInterval(typingInterval);
+        if (index < lastMessage.message.length) {
+          setTimeout(typeNextChar, 20);
+        } else {
+          setDisplayedMessages((prevInner) =>
+            prevInner.map((msg) =>
+              msg.id === lastMessage.id ? lastMessage : msg
+            )
+          );
         }
-      }, 0);
+      };
+
+      setTimeout(typeNextChar, 20);
     }
-  }, [clientChat, displayedMessages]);
+  }, [clientChat]);
+
+  useEffect(() => {
+    scrollRef.current?.scrollTo({
+      top: scrollRef.current.scrollHeight,
+      behavior: "smooth",
+    });
+  }, [displayedMessages]);
 
   return (
-    <div className="w-full pb-28 sm:pb-20">
+    <div className="w-full pb-28 sm:pb-20 overflow-y-auto" ref={scrollRef}>
       {displayedMessages.map((chat) => (
         <div key={chat.id} className="p-2 clear-both">
           {chat.type === "client" ? (

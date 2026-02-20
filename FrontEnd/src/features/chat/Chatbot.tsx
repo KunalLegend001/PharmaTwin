@@ -4,6 +4,8 @@ import { Pill } from "lucide-react";
 import StartBot from "./components/StartBot";
 import BotChats from "./components/BotChats";
 import MessageBot from "./components/MessageBot";
+import Header from "@/components/shared/Header";
+import { Separator } from "@/components/ui/separator";
 
 type ChatMessage = {
   id: number;
@@ -34,15 +36,23 @@ export const PharmaChatbotForm = () => {
     try {
       const botResponse = await Pharmachatbot({ message });
 
+      const botMessageText = botResponse.reply || "No response";
+
       const newBotMessage: ChatMessage = {
         id: Date.now() + 1,
-        message: botResponse.response,
+        message: botMessageText,
         type: "bot",
       };
 
       setClientChat((prev) => [...prev, newBotMessage]);
     } catch (error) {
       console.error("Error fetching bot response:", error);
+      const errorMessage: ChatMessage = {
+        id: Date.now() + 1,
+        message: "Bot failed to respond.",
+        type: "bot",
+      };
+      setClientChat((prev) => [...prev, errorMessage]);
     } finally {
       setLoading(false);
     }
@@ -52,7 +62,6 @@ export const PharmaChatbotForm = () => {
     setTimeout(() => setIsVisible(true), 100);
   }, []);
 
-  // If no messages yet → show StartBot
   if (clientChat.length === 0) {
     return (
       <StartBot
@@ -69,13 +78,12 @@ export const PharmaChatbotForm = () => {
 
   return (
     <div className="flex flex-col h-screen w-full max-w-4xl mx-auto">
-      
-      {/* Scrollable Chat Area */}
+      <Header title="Chatbot" />
+      <Separator />
       <div className="flex-1 overflow-y-auto px-4 pt-6 pb-28">
         <BotChats clientChat={clientChat} />
       </div>
 
-      {/* Fixed Bottom Input */}
       <div className="fixed bottom-4 left-0 right-0 bg-white border rounded-xl shadow-md mx-2">
         <div className="max-w-4xl mx-auto">
           <MessageBot

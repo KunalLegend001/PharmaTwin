@@ -13,6 +13,8 @@ import WhoCanUse from "../components/WhoCanUse";
 import ClinicalTrust from "../components/ClinicalTrust";
 import HomeFooter from "../components/HomeFooter";
 import BackgroundGradient from "@/components/shared/GradientBg";
+import Header from "@/components/shared/Header";
+import { Separator } from "@/components/ui/separator";
 
 
 const zoomVariants: Variants = {
@@ -48,7 +50,11 @@ const AnimatedSection = ({ children }: AnimatedSectionProps) => (
 
 const Home = () => {
   return (
+    <>
+    <Header title="Home" />
+    <Separator />
     <div className="min-h-screen bg-white space-y-20">
+      
       <BackgroundGradient/>
       <AnimatedSection><Hero /></AnimatedSection>
       <AnimatedSection><ProblemSection /></AnimatedSection>
@@ -61,6 +67,7 @@ const Home = () => {
       <AnimatedSection><ClinicalTrust /></AnimatedSection>
       <AnimatedSection><HomeFooter /></AnimatedSection>
     </div>
+    </>
   );
 };
 

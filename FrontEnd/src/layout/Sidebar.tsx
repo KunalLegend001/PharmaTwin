@@ -74,6 +74,9 @@ const SidebarHeader = () => {
   return (
     <div className="flex items-center">
       <Logo className="size-10" />
+      <span className="text-2xl font-bold">
+          PharmaTwin
+      </span>
     </div>
   );
 };

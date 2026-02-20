@@ -10,6 +10,8 @@ import type { AnalysisHistoryItem } from "@/lib/history";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Trash2, Eye } from "lucide-react";
+import Header from "@/components/shared/Header";
+import { Separator } from "@/components/ui/separator";
 
 const HistoryPage: React.FC = () => {
   const [history, setHistory] = useState<AnalysisHistoryItem[]>([]);
@@ -43,9 +45,11 @@ const HistoryPage: React.FC = () => {
   }
 
   return (
+    <>
+    <Header title="Analysis History" />
+    <Separator />
     <div className="max-w-4xl mx-auto mt-10 space-y-4 px-4">
       <div className="flex justify-between items-center">
-        <h2 className="text-2xl font-bold">Analysis History</h2>
         <Button variant="destructive" onClick={handleClearAll}>
           Clear All
         </Button>
@@ -80,6 +84,7 @@ const HistoryPage: React.FC = () => {
         </Card>
       ))}
     </div>
+    </>
   );
 };
 

@@ -29,7 +29,7 @@ const Hero = () => {
               </span>
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0E3B3B] leading-tight tracking-tight">
-              PharmaTwin: AI-Powered Pharmacogenomic Prescription Safety
+              PharmaTwin: Pharmacogenomic Risk Prediction System
             </h1>
             <p className="text-base sm:text-lg text-gray-700 leading-relaxed bg-white/70 backdrop-blur-sm p-4 rounded-lg">
               PharmaTwin analyzes patient pharmacogenomic variants and predicts
